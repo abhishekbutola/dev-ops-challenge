@@ -17,6 +17,7 @@ Case B. If the user opens (https://xxxxxxxxx.cloudfront.net/devops-folder/) it s
 **NOTE:** Both the URLs should not include index.html or any .html extension.`
 
 # Solution
+
 Steps to follow:
 
 1. Login to your AWS account
@@ -62,3 +63,20 @@ Steps to follow:
    [CDN 2 Origin Test (dev-challenge-bucket2.s3-website-us-east-1.amazonaws.com)](http://dev-challenge-bucket2.s3-website-us-east-1.amazonaws.com/)
 
 
+Cloud Front 
+
+7. Go to AWS , search for cloud front and Create a distributions
+8. Add both s3 dev-challenge-bucket1 and dev-challenge-bucket2 buckets as origins
+9. Add behaviour for dev-challenge-bucket2
+
+   /devops-folder/*
+
+   in origin group select bucket dev-challenge-bucket2
+10. create distribution
+11. Access it over
+
+    d2e5g3u6agnhz.cloudfront.net/
+
+and 
+
+d2e5g3u6agnhz.cloudfront.net/devops-folder/
