@@ -21,14 +21,15 @@ Case B. If the user opens (https://xxxxxxxxx.cloudfront.net/devops-folder/) it s
 Steps to follow:
 
 1. Login to your AWS account
-2. Create 2 s3 bucket dev-challenge-bucket1, dev-challenge-bucket2 and upload index1.html in dev-challenge-bucket1
+2. Create 2 s3 bucket dev-challenge-bucket1, dev-challenge-bucket2 and upload index.html in dev-challenge-bucket1
 
    "Hello, CDN origin is working fine"
 
-   and index.html2 in dev-challenge-bucket2
+ then create a folder devops-folder in s3 bucket (dev-challenge-bucket2) and upload index.html 
 
-   ""Hello, CDN 2 origin is working fine"
-3. set bucket1 policy
+   "Hello, CDN 2 origin is working fine"
+
+4. set bucket1 policy
 
    {
    "Version": "2012-10-17",
@@ -42,7 +43,7 @@ Steps to follow:
    }
    ]
    }
-4. set bucket2 policy
+5. set bucket2 policy
 
     {
 "Version": "2012-10-17",
@@ -57,26 +58,29 @@ Steps to follow:
 ]
 }
 
-5. Enable Static hosting and access the page1 via
-   [CDN Origin Test (dev-challenge-bucket1.s3.amazonaws.com)](https://dev-challenge-bucket1.s3.amazonaws.com/index1.html)
-6. Enable Static hosting and access the page2 via
-   [CDN 2 Origin Test (dev-challenge-bucket2.s3-website-us-east-1.amazonaws.com)](http://dev-challenge-bucket2.s3-website-us-east-1.amazonaws.com/)
+6. Enable Static hosting and access the page1 via
+    http://dev-challenge-bucket1.s3-website-us-east-1.amazonaws.com/index.html
+7. Enable Static hosting and access the page2 via
+    http://dev-challenge-bucket2.s3-website-us-east-1.amazonaws.com/index.html
 
 
 Cloud Front 
 
 7. Go to AWS , search for cloud front and Create a distributions
 8. Add both s3 dev-challenge-bucket1 and dev-challenge-bucket2 buckets as origins
-9. Add behaviour for dev-challenge-bucket2
-
-   /devops-folder/*
-
-   in origin group select bucket dev-challenge-bucket2
+9. In case of origin dev-challenge-bucket1.s3.us-east-1.amazonaws.com
+    make sure root folder / is pointed to index.html of the dev-challenge-bucket1 (found in the     general section of distribution)
 10. create distribution
-11. Access it over
+11. Test the behaviour of the distribution by accessing 
+    https://d361dcs130gtue.cloudfront.net/index.html
+    https://d361dcs130gtue.cloudfront.net/devops-folder/index.html
 
-    d2e5g3u6agnhz.cloudfront.net/
+12. Add behaviour for dev-challenge-bucket2
+   /devops-folder/*
+   in origin group select bucket dev-challenge-bucket2
 
+13. Access it over
+    https://d361dcs130gtue.cloudfront.net/
 and 
+    https://d361dcs130gtue.cloudfront.net/devops-folder/
 
-d2e5g3u6agnhz.cloudfront.net/devops-folder/
