@@ -24,13 +24,17 @@ Steps to follow:
 1. Login to your AWS account
 2. Create 2 s3 bucket dev-challenge-bucket1, dev-challenge-bucket2 and upload index.html in dev-challenge-bucket1
 
+<img width="697" alt="image" src="https://github.com/user-attachments/assets/96af82d9-9cdc-4a53-a95e-9029c7402535">
+
    "Hello, CDN origin is working fine"
 
  then create a folder devops-folder in s3 bucket (dev-challenge-bucket2) and upload index.html 
 
+<img width="603" alt="image" src="https://github.com/user-attachments/assets/ee658ce6-54aa-419d-8fd1-a632ec79841a">
+
+<img width="620" alt="image" src="https://github.com/user-attachments/assets/cf58c2bb-55c5-4440-b125-571537db2522">
+
    "Hello, CDN 2 origin is working fine"
-
-
 
 4. set bucket1 policy
 
@@ -46,6 +50,10 @@ Steps to follow:
    }
    ]
    }
+
+<img width="673" alt="image" src="https://github.com/user-attachments/assets/1a4d10b1-c8bb-4db6-bc61-8613c78f6dee">
+
+   
 5. set bucket2 policy
 
     {
@@ -63,8 +71,14 @@ Steps to follow:
 
 6. Enable Static hosting and access the page1 via
     http://dev-challenge-bucket1.s3-website-us-east-1.amazonaws.com/index.html
+
+<img width="580" alt="image" src="https://github.com/user-attachments/assets/09cc8747-0129-40a7-9874-f43756bbfe8e">
+
+
 7. Enable Static hosting and access the page2 via
     http://dev-challenge-bucket2.s3-website-us-east-1.amazonaws.com/index.html
+
+<img width="614" alt="image" src="https://github.com/user-attachments/assets/756242f6-1b77-4765-b91b-a5336153d051">
 
 
 Cloud Front 
